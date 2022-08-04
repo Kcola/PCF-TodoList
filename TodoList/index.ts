@@ -19,10 +19,7 @@ export class TodoList
   updateView(context: ComponentFramework.Context<IInputs>): void {
     const handleSelect = (keys: string[]) => {
       context.parameters.todos.setSelectedRecordIds(keys);
-      console.log({ keysSelected: keys });
     };
-
-    console.log(context.parameters.todos.getSelectedRecordIds());
 
     const todos = Object.entries(context.parameters.todos.records).reduce<
       Todo[]
