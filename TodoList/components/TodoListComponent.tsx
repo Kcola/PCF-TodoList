@@ -5,6 +5,7 @@ import unique from "lodash/uniq";
 export type Todo = { key: string; id: number; content: string };
 
 const stackTokens = { childrenGap: 10 };
+
 export const TodoListComponent: FC<{
   todos: Array<Todo>;
   handleSelect: (keys: string[]) => void;
@@ -14,6 +15,7 @@ export const TodoListComponent: FC<{
   useEffect(() => {
     handleSelect(selected);
   }, [selected]);
+
   return (
     <Stack tokens={stackTokens}>
       {todos.map((todo) => (

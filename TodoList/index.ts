@@ -21,13 +21,17 @@ export class TodoList
       context.parameters.todos.setSelectedRecordIds(keys);
     };
 
-    const todos = Object.entries(context.parameters.todos.records).reduce<
-      Todo[]
-    >((acc, [key, record]) => {
+    const records = context.parameters.todos.records;
+
+    const sortedRecords = context.parameters.todos.sortedRecordIds.map<
+      [string, typeof records[string]]
+    >((id) => [id, records[id]]);
+
+    const todos = sortedRecords.reduce<Todo[]>((acc, [key, record]) => {
       const entry = context.parameters.todos.columns.reduce<
         Record<string, unknown>
       >((acc1, column) => {
-        acc1[column.name] = record.getValue(column.name);
+        acc1[column.alias] = record.getValue(column.name);
         return acc1;
       }, {}) as Todo;
 
