@@ -36,6 +36,7 @@ export class TodoList
       }, {}) as Todo;
 
       entry.key = key;
+
       return [...acc, entry];
     }, []);
 

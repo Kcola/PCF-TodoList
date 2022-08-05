@@ -21,6 +21,7 @@
     <data-set name="todos" display-name-key="Records_Dataset_Display" cds-data-set-options="displayCommandBar:true;displayViewSelector:true;displayQuickFind:true">
       <property-set name="id" required="true" display-name-key="Todo_ID" description-key="Todo_ID_Desc" usage="bound" of-type="SingleLine.Text" />
       <property-set name="content" required="true" display-name-key="Todo_Content" description-key="Todo_Content_Desc" usage="bound" of-type="SingleLine.Text" />
+      <property-set name="status" required="true" display-name-key="Todo_Completed" description-key="Todo_Completed_Desc" usage="bound" of-type="TwoOptions" />
     </data-set>
     <resources>
       <code path="index.ts" order="1"/>
